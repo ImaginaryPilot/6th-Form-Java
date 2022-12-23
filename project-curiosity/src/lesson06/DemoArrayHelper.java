@@ -20,7 +20,7 @@ public class DemoArrayHelper {
 
         boolean found = ArrayHelper.contains(myNumbers, myNumber);
         System.out.print(found);
-        boolean notFound = ArrayHelper.contains(myNumbers,6);
-        System.out.println(notFound); 
+        boolean notFound = ArrayHelper.contains(myNumbers, 6);
+        System.out.println(notFound);
     }
 }
