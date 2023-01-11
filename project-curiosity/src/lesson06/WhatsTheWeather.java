@@ -10,6 +10,9 @@ public class WhatsTheWeather {
     static int[] humidity = new int[7];
     static String[] conditions = {"Sunny", "Cloudy", "Rain", "Snow", "Thunder"};
 
+    // Random Factor
+    static Random ran = new Random();
+
     public static void main(String[] args){
         // record all temperature data for each day of the week
         for (int i = 0; i <= 6; i++) {
@@ -24,14 +27,11 @@ public class WhatsTheWeather {
             System.out.println("Humidity: " + humidity[i] + "%");
 
             // the condition of the weather
-            switch(temp[i]){
-                case 
-            }
-            if(temp[i] <= 25) {
-
-            }
+            System.out.println("Weather condition: " + conditions[ran.nextInt(conditions.length)]);
             System.out.println("--------------------------------------");
         }
+
+        System.out.println("This is the weather condition for this week.");
     }
 
     public static int rand(int min, int max)
