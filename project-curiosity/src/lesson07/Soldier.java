@@ -26,7 +26,13 @@ public class Soldier {
      }
 
      public void eat() {
+        if(isHungry) {
+            switch(hungerLevel) {
+                case "Hamborgor":
+                case "Borgor":
+                default:
+            }
+        }
         isHungry = false;
-        hungerLevel = "Hamborgor";
      }
 }
