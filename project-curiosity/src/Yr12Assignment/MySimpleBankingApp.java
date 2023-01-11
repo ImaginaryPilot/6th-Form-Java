@@ -29,10 +29,12 @@ public class MySimpleBankingApp {
 
         // Declare char userChoice and set it to 'A' by default
         char userChoice = 'A';
+        char contin = 'y';
+
         System.out.println("Choose your operation: ");
         userChoice = Keyboard.readChar();
 
-        while (userChoice != 'D') {
+        while (userChoice != 'D' && contin == 'y') {
             switch (userChoice) {
                 case 'A':
                     // Printing the past Transcations and the balance you have left in the account
@@ -102,7 +104,6 @@ public class MySimpleBankingApp {
             System.out.println("--------------------------------------");
 
             // Asking the user if they wish to continue
-            char contin = 'y';
             System.out.println("Do you want to continue? (y/n)");
             contin = Keyboard.readChar();
             System.out.println("--------------------------------------");
