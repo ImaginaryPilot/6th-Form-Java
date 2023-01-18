@@ -16,11 +16,11 @@ public class WhatsTheWeather {
     public static void main(String[] args){
         // enter a random temperature
         temperature = rand(-25, 50);
+        
         // record all temperature data for each day of the week
         for (int i = 0; i <= 6; i++) {
             System.out.println("Weather of " + weekDays[i]);
             
-
             // enter a random humidity
             humidity[i] = rand(0, 100);
             System.out.println("Humidity: " + humidity[i] + "%");
