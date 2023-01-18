@@ -11,10 +11,16 @@ public class Soldier {
     int ID;
     String hungerLevel = "Borgor";
     boolean isHungry; 
+    char gender;
 
     /*
      * ------- Coming Soon -------
      */
+
+    public Soldier(){} // default constructor
+    public Soldier(char gender){ // paramitised constructor to immediately get a desired state
+        this.gender = gender;   
+    }
 
     /*
      * ------- Behavioural Methods -------

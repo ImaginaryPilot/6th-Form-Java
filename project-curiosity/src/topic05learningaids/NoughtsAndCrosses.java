@@ -6,7 +6,7 @@ package topic05learningaids;
  */
 public class NoughtsAndCrosses {
 
-    // TODO: declare char 2D array here
+    // declare char 2D array here
     static char[][] grid;
     
     public static void main(String[] args) {
@@ -26,19 +26,24 @@ public class NoughtsAndCrosses {
         // key lesson is navigating through the 2D array
         // using nested for loops
         for (int row = 0; row < grid.length; row++) { // jump to row (vertically)
-            System.out.println("---------------");
+            System.out.println("-------------------");
             for (int col = 0; col < grid[0].length; col++) { // jump to col (horizontally)
-                if(col == 0){
+                 // check if there is a chracter if not put a space
+                // this is only for pretty display reasons
+                if (grid[row][col] == 0) {
+                    grid[row][col] = ' ';
+                }
+                System.out.print("|  " + grid[row][col]);
+                // if we are at the edge of a row close the grid
+                if (col == 2) {
+                    System.out.print("  |");
+                } else {
                     System.out.print("  ");
                 }
-                if(col == 0){
-                    System.out.print("  ");
-                } 
-                System.out.print(grid[row][col] + "  |  ");
             }
             System.out.println("");
         }
-        System.out.println("---------------");
+        System.out.println("-------------------");
     }
 
     public static boolean horizontalCheck(int row, char symbol) {
