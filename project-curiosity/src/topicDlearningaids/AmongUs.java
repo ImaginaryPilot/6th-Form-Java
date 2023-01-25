@@ -21,7 +21,12 @@ public class AmongUs {
         "Gray", "Tan", "Coral"
     }; // 18 colours
 
-    // TODO: Declare a static final array with all the roles allowed
+    // Declare a static final array with all the roles allowed
+    public static final String[] ROLES = {
+        "Impostor", "Crewmate", "Ghost", 
+        "Scientist", "Engineer", "ShapeShifter", 
+        "Guardian Angel"
+    };
 
     private static boolean[] AVAILABLE_COLOURS = {
         true, true, true,
@@ -32,7 +37,16 @@ public class AmongUs {
         true, true, true,
     };
 
-    // TODO: Declare a static boolean array with all the roles taken
+    public static final int CREW_MAX = 10;
+
+    public static final int IMPOSTOR_MAX = 2;
+
+    // Declare a static boolean array with all the roles taken
+    private static boolean[] AVAILABLE_ROLES = {
+        true, true, true,
+        true, true, true,
+        true
+    };
 
     private String colour;
 
@@ -45,6 +59,7 @@ public class AmongUs {
     public AmongUs() {
         setRandomColour();
         // TODO: continue to initialise the state
+
     }
 
     /**
@@ -52,8 +67,10 @@ public class AmongUs {
      * 
      * @param colour
      */
-    public AmongUs(String colour) {
-        // TODO: initialise the state
+    public AmongUs(String colour, String Role) {
+        // initialise the state
+        this.colour = colour;
+        this.role = Role;
     }
 
     /**

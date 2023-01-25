@@ -6,5 +6,7 @@ public class Scopa {
         
     }
 
-
+    public static void point(float x, float y){
+        
+    }
 }
