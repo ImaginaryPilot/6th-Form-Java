@@ -28,7 +28,6 @@ public class NoughtsAndCrosses {
         for (int row = 0; row < grid.length; row++) { // jump to row (vertically)
             System.out.println("-------------------");
             for (int col = 0; col < grid[0].length; col++) { // jump to col (horizontally)
-                 // check if there is a chracter if not put a space
                 // this is only for pretty display reasons
                 if (grid[row][col] == 0) {
                     grid[row][col] = ' ';
@@ -47,21 +46,38 @@ public class NoughtsAndCrosses {
     }
 
     public static boolean horizontalCheck(int row, char symbol) {
-        // TODO
-        return false;
+        for (int i = 0; i < grid[row].length; i++) {
+            if (grid[row][i] != symbol) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean verticalCheck(int col, char symbol) {
-        // TODO
-        return false;
+        for (int row = 0; row < grid.length; row++) {
+            if (grid[row][col] != symbol) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    public static boolean diagonalCheck(int col, char symbol) {
-        // TODO
-        return false;
+    public static boolean diagonalCheck(char symbol) {
+        if(grid[1][1] != symbol) {
+            return false;
+        }
+        for(int row = 0; row < grid.length; row = row + 2) {
+            for(int col = 0; col < grid[0].length; col = row + 2){
+                if(grid[row][col] != symbol) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public static boolean isWinningMove(int col, char symbol) {
-        return diagonalCheck(col, symbol) || verticalCheck(col, symbol) || horizontalCheck(col, symbol);
+        return diagonalCheck(symbol) || verticalCheck(col, symbol) || horizontalCheck(col, symbol);
     }
 }
