@@ -88,16 +88,32 @@ public class AmongUs {
           // get a random number between 0 and WARDROBE.length - 1
           // https://stackoverflow.com/questions/2444019/how-do-i-generate-a-random-integer-between-min-and-max-in-java
           select = r.nextInt(WARDROBE.length - 1); 
-        } while(AVAILABLE_COLOURS[select] == false);
+        } while(!isColorAvailable(select));
         this.colour = WARDROBE[select];
         AVAILABLE_COLOURS[select] = false;
+    }
+
+    private boolean isColorAvailable(int index) {
+        return AVAILABLE_COLOURS[index] == false;
     }
 
     /**
      * Gives this instance a random role
      */
     public void setRandmomRole() {
+        Random r = new Random();
+        int select = 0;
+        do {
+          // get a random number between 0 and WARDROBE.length - 1
+          // https://stackoverflow.com/questions/2444019/how-do-i-generate-a-random-integer-between-min-and-max-in-java
+          select = r.nextInt(ROLES.length - 1); 
+        } while(!isRoleAvailable(ROLES[select]));
+        this.role = ROLES[select];
+        AVAILABLE_ROLES[select] = false;
+    }
 
+    private boolean isRoleAvailable(String role) {
+        return true;
     }
 
     /**

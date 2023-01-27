@@ -1,4 +1,6 @@
 package topic05learningaids;
+import helpers.Keyboard;
+import java.util.Random;
 
 /**
  * Describe the nature of 2D arrays.
@@ -8,16 +10,27 @@ public class NoughtsAndCrosses {
 
     // declare char 2D array here
     static char[][] grid;
+    static char symbol;
     
     public static void main(String[] args) {
         // allocate memory for my grid
         grid = new char[3][3];
-        displayGrid();
 
-        // Filling the first row with crosses
-        grid[0][0] = 'X';
-        grid[0][1] = 'X';
-        grid[0][2] = 'X';
+        // create and get symbol
+        int randomchance = rand(0, 1);	
+        if (randomchance == 0){
+            symbol = 'X';
+            System.out.println("You are X");
+        }
+        else {
+            symbol = 'O';
+            System.out.println("You are O");
+        }
+
+        displayGrid();
+        for (int i = 0; i < 3; i++) {
+            grid[inputrow(i)][inputcol(i)] = symbol;
+        }
 
         displayGrid();
     }
@@ -43,6 +56,23 @@ public class NoughtsAndCrosses {
             System.out.println("");
         }
         System.out.println("-------------------");
+    }
+
+    public static char chosenSymbol(char symbol) {
+        
+        return symbol;
+    }
+
+    public static int inputrow(int row) {
+        System.out.println("What row?");
+        row = Keyboard.readInt();
+        return row; 
+    }
+
+    public static int inputcol(int col) {
+        System.out.println("What column?");
+        col = Keyboard.readInt();
+        return col; 
     }
 
     public static boolean horizontalCheck(int row, char symbol) {
@@ -79,5 +109,19 @@ public class NoughtsAndCrosses {
 
     public static boolean isWinningMove(int col, char symbol) {
         return diagonalCheck(symbol) || verticalCheck(col, symbol) || horizontalCheck(col, symbol);
+    }
+
+    public static int rand(int min, int max)
+    {
+        if (min > max) {
+            throw new IllegalArgumentException("Invalid range");
+        }
+ 
+        double rand = Math.random();
+        return (int)(rand * ((max - min) + 1)) + min;
+    }
+
+    public static int a(int a){
+        return a;
     }
 }
