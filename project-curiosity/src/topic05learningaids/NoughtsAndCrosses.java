@@ -1,6 +1,5 @@
 package topic05learningaids;
 import helpers.Keyboard;
-import java.util.Random;
 
 /**
  * Describe the nature of 2D arrays.
@@ -11,6 +10,8 @@ public class NoughtsAndCrosses {
     // declare char 2D array here
     static char[][] grid;
     static char symbol;
+    static char compsymbol;
+    static int turn = 0;
     
     public static void main(String[] args) {
         // allocate memory for my grid
@@ -20,10 +21,12 @@ public class NoughtsAndCrosses {
         int randomchance = rand(0, 1);	
         if (randomchance == 0){
             symbol = 'X';
+            compsymbol = 'O';
             System.out.println("You are X");
         }
         else {
             symbol = 'O';
+            compsymbol = 'X';
             System.out.println("You are O");
         }
 
@@ -66,13 +69,13 @@ public class NoughtsAndCrosses {
     public static int inputrow(int row) {
         System.out.println("What row?");
         row = Keyboard.readInt();
-        return row; 
+        return row - 1; 
     }
 
     public static int inputcol(int col) {
         System.out.println("What column?");
         col = Keyboard.readInt();
-        return col; 
+        return col - 1; 
     }
 
     public static boolean horizontalCheck(int row, char symbol) {
