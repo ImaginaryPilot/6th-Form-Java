@@ -33,6 +33,9 @@ public class NoughtsAndCrosses {
         displayGrid();
         for (int i = 0; i < 3; i++) {
             grid[inputrow(i)][inputcol(i)] = symbol;
+            if(isWinningMove(i, symbol) == true){
+                System.out.println("Winning Move");
+            }
         }
 
         displayGrid();
@@ -61,11 +64,6 @@ public class NoughtsAndCrosses {
         System.out.println("-------------------");
     }
 
-    public static char chosenSymbol(char symbol) {
-        
-        return symbol;
-    }
-
     public static int inputrow(int row) {
         System.out.println("What row?");
         row = Keyboard.readInt();
@@ -80,7 +78,7 @@ public class NoughtsAndCrosses {
 
     public static boolean horizontalCheck(int row, char symbol) {
         for (int i = 0; i < grid[row].length; i++) {
-            if (grid[row][i] != symbol) {
+            if (grid[row][i] == symbol) {
                 return false;
             }
         }
@@ -89,7 +87,7 @@ public class NoughtsAndCrosses {
 
     public static boolean verticalCheck(int col, char symbol) {
         for (int row = 0; row < grid.length; row++) {
-            if (grid[row][col] != symbol) {
+            if (grid[row][col] == symbol) {
                 return false;
             }
         }
@@ -97,17 +95,23 @@ public class NoughtsAndCrosses {
     }
 
     public static boolean diagonalCheck(char symbol) {
-        if(grid[1][1] != symbol) {
-            return false;
-        }
-        for(int row = 0; row < grid.length; row = row + 2) {
-            for(int col = 0; col < grid[0].length; col = row + 2){
-                if(grid[row][col] != symbol) {
-                    return false;
+        boolean WinRight = true;
+        boolean WinLeft = true;
+        for(int row = 0; row < grid.length; row++){
+            for(int col = 0; col < grid[0].length; col++){
+                if (row== col){
+                    if(grid[row][col] != symbol){
+                        return WinRight;
+                    }
+                }
+                else if ((row + col) == grid.length - 1){
+                    if(grid[row][col] != symbol){
+                        WinLeft = false;
+                    }
                 }
             }
         }
-        return true;
+        return WinRight || WinLeft;
     }
 
     public static boolean isWinningMove(int col, char symbol) {
