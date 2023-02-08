@@ -41,6 +41,7 @@ public class NoughtsAndCrosses {
         displayGrid();
     }
 
+    // displaying the grid
     public static void displayGrid() {
         // key lesson is navigating through the 2D array
         // using nested for loops
@@ -64,18 +65,21 @@ public class NoughtsAndCrosses {
         System.out.println("-------------------");
     }
 
+    // Input row
     public static int inputrow(int row) {
         System.out.println("What row?");
         row = Keyboard.readInt();
         return row - 1; 
     }
 
+    // input column
     public static int inputcol(int col) {
         System.out.println("What column?");
         col = Keyboard.readInt();
         return col - 1; 
     }
 
+    // Horizontal check
     public static boolean horizontalCheck(int row, char symbol) {
         for (int i = 0; i < grid[row].length; i++) {
             if (grid[row][i] == symbol) {
@@ -85,6 +89,7 @@ public class NoughtsAndCrosses {
         return true;
     }
 
+    // Vertical check
     public static boolean verticalCheck(int col, char symbol) {
         for (int row = 0; row < grid.length; row++) {
             if (grid[row][col] == symbol) {
@@ -94,6 +99,7 @@ public class NoughtsAndCrosses {
         return true;
     }
 
+    // Diagonally checking
     public static boolean diagonalCheck(char symbol) {
         boolean WinRight = true;
         boolean WinLeft = true;
@@ -114,10 +120,12 @@ public class NoughtsAndCrosses {
         return WinRight || WinLeft;
     }
 
+    // Check if the given symbol is a winning move.
     public static boolean isWinningMove(int col, char symbol) {
-        return diagonalCheck(symbol) || verticalCheck(col, symbol) || horizontalCheck(col, symbol);
+        return verticalCheck(col, symbol) || horizontalCheck(col, symbol);
     }
 
+    // Random selection
     public static int rand(int min, int max)
     {
         if (min > max) {
@@ -126,9 +134,5 @@ public class NoughtsAndCrosses {
  
         double rand = Math.random();
         return (int)(rand * ((max - min) + 1)) + min;
-    }
-
-    public static int a(int a){
-        return a;
     }
 }

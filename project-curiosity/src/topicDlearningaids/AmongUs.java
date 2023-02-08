@@ -37,16 +37,9 @@ public class AmongUs {
         true, true, true,
     };
 
-    public static final int CREW_MAX = 10;
+    public static int[] playerTracker = {0, 0, 0, 0, 0, 0, 0, 0};
 
     public static final int IMPOSTOR_MAX = 2;
-
-    // Declare a static boolean array with all the roles taken
-    private static boolean[] AVAILABLE_ROLES = {
-        true, true, true,
-        true, true, true,
-        true
-    };
 
     private String colour;
 
@@ -58,7 +51,7 @@ public class AmongUs {
      */
     public AmongUs() {
         setRandomColour();
-        // TODO: continue to initialise the state
+        setRandmomRole();
 
     }
 
@@ -88,13 +81,18 @@ public class AmongUs {
           // get a random number between 0 and WARDROBE.length - 1
           // https://stackoverflow.com/questions/2444019/how-do-i-generate-a-random-integer-between-min-and-max-in-java
           select = r.nextInt(WARDROBE.length - 1); 
-        } while(!isColorAvailable(select));
+        } while(!isColorAvailable(WARDROBE[select]));
         this.colour = WARDROBE[select];
         AVAILABLE_COLOURS[select] = false;
     }
 
-    private boolean isColorAvailable(int index) {
-        return AVAILABLE_COLOURS[index] == false;
+    private boolean isColorAvailable(String color) {
+        for(int i = 0; i < WARDROBE.length; i++){
+            if(WARDROBE[i].equals(color)){
+                return  (AVAILABLE_COLOURS[i] == true);
+            }
+        }
+        return false;
     }
 
     /**
@@ -109,11 +107,35 @@ public class AmongUs {
           select = r.nextInt(ROLES.length - 1); 
         } while(!isRoleAvailable(ROLES[select]));
         this.role = ROLES[select];
-        AVAILABLE_ROLES[select] = false;
+        playerTracker[select] += 1;
     }
 
     private boolean isRoleAvailable(String role) {
-        return true;
+        for (int i = 0; i < ROLES.length; i++) {
+            if (ROLES[i].equals(role)){
+                switch(ROLES[i]){
+                    case "Imposter" :{
+                        if (playerTracker[i] < 2){
+                            return true; // the role of Imposter is available, because we did not hit a max. 
+                        }
+                    }
+                    case "Crew" : {
+                        return true;
+                    }
+                    case "Ghost" : {
+                        return false;
+                    }
+                    default : {
+                        if (playerTracker[i] < 1){
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        return false; // I think this is unreachable, but I digress. 
     }
 
     /**
