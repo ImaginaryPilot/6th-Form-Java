@@ -224,10 +224,68 @@ public class ArrayHelper {
         System.out.println();
     }
 
+    public static void printElements(double[] arr) {
+        for (double e : arr) {
+            System.out.print(e + ", ");
+        }
+        System.out.println();
+    }
+
     public static void printElements(String[] arr) {
         for (String e : arr) {
             System.out.println(e);
         }
         System.out.println();
+    }
+
+    public static double[] bubbleSort2(double[] arr){
+        for(int pass = 0; pass < arr.length - 1; pass++){
+            for(int current = 0; current < arr.length - 1; current++) {
+                if(arr[current] > arr[current + 1]){
+                    double temp = arr[current];
+                    arr[current] = arr[current + 1];
+                    arr[current + 1] = temp;
+                }
+            }
+        }
+        printElements(arr);
+        return arr;
+    }
+
+    public static int binarySearch(int[] arr, int key){
+        // check that the array is ascending order!
+        bubbleSort(arr);
+
+        int start = 0;
+        int end = arr.length;
+
+        // code for binary search
+        while (start <= end){
+            int mid = (start+end)/2;
+            if (arr[mid] == key){
+                return mid;
+            } 
+            else if(arr[mid] < key) {
+                start = mid + 1;
+            }
+            else {
+                end = mid - 1;
+            }
+        }
+        return -1; // return an impossible value (key not found)
+    }
+
+    public static int selectionsort(int[] Nums){
+        for (int current = 0; current < Nums.length - 2; current++) { // sorted part(red)
+            int min = current;
+            for (int counter = (current + 1); counter < Nums.length; counter++){
+                // the blue pointer on a mission
+                if(Nums[counter] < Nums[min]){
+                    
+                }
+            }
+        }
+
+        return 0;
     }
 }
