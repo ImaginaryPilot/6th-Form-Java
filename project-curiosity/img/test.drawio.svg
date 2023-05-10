@@ -1,0 +1,61 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="411px" height="274px" viewBox="-0.5 -0.5 411 274" content="&lt;mxfile&gt;&lt;diagram id=&quot;0GAeSZZQqxbyc5v0c2bA&quot; name=&quot;Page-1&quot;&gt;7VbLbtswEPwaA8khhR6x4x5tKU0LOEVQB+iZkWhpEYoUqPUrX9+lSFmSZbdO02MBA9bOzvI1s5RGYVTsHjQr80eVcjEKvHQ3CuNREPh+MKY/g+wtMvYckGlIHakFlvDGHeg5dA0pr3pEVEoglH0wUVLyBHsY01pt+7SVEv1ZS5bxAbBMmBiiPyHF3KLTsdfiXzlkeTOz77lMwRqyA6qcpWrbgcL7URhppdA+FbuIC3N4zbnYui9nsoeFaS7xkoI7W7BhYu32NitLBRILM4BdIu6bfVdbKASTFM1XSuLSZXyKmYBM0nNCdVwTsOEagY5s5hKoSkKTHES6YHu1NsurkCWvTTTPlYY3GpYJNyalNTr1g0mPsTSVBHuEal4R56nZs38EPbJdj7hgFTogUUKwsoKXwzYKpjOQc4WoCkdyJ0Tb4buzp+wftCPTc1Vw1HuiuIKD3M7vExduW/PcNt7OO8YJ7hzInGGzw9CtpvTgZD0t8XQg8Y3JmpXP6OEbIZNREPpmryaDgOY4TG6JGmR2nN+Xv0unDF16oUj+mMJnKPgRK1vzCivLm2nN9gsgVYKJMEZ4MEkKMqyPv1coaFAEJdsp6uhoDbxKNJQtL+4Afappapkaxxpe1ER9klQIK7BTnVv09w6nXftRA5GFsDa2Vq88UkLRvLFUtqNAiCOoaSrBV3i2paqSJSTDoubEty3ywxnJQIpqV6K+aXJIUy5NOyhkyKz3zU7rvq+NNp7Tj6wXeZ/GozEtPKLYb2P6GbrGiM4DNavNFHNqrK1R7sKeuTvdM65HjAKX9Igf3n68Rz4PemQgnYBaEitdc+v7f6VbQQoI3gr1bHSMb/yBmOFQzPCEcIK9cPGkKrCGj7XlHgn6J836pgSZcw3/SEv/0gtv+nEpm2F7Ws6NlhyfzdV2Za+ta9vHG0WFbbcfqL3L68ocVhSMZp7ZE2fadIS9Q+mdTi+kvAukbN8Nc7Xu80GukXemvx7Ozzb8yjHgxHv4/zXyDutNL7xHvODd5qOw/VSrc50P3vD+Fw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs>
+        <clipPath id="mx-clip-4-31-402-134-0">
+            <rect x="4" y="31" width="402" height="134"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-173-402-102-0">
+            <rect x="4" y="173" width="402" height="102"/>
+        </clipPath>
+    </defs>
+    <g>
+        <path d="M 0 26 L 0 0 L 410 0 L 410 26" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 0 26 L 0 270 L 410 270 L 410 26" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 26 L 410 26" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="rgb(0, 0, 0)" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="204.5" y="17.5">
+                Appointment
+            </text>
+        </g>
+        <g fill="rgb(0, 0, 0)" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-31-402-134-0)" font-size="12px">
+            <text x="5.5" y="43.5">
+                - int: ID
+            </text>
+            <text x="5.5" y="57.5">
+                - title: String
+            </text>
+            <text x="5.5" y="71.5">
+                - type: String
+            </text>
+            <text x="5.5" y="85.5">
+                - date: LocalDateTime
+            </text>
+            <text x="5.5" y="99.5">
+                - guests: ArrayList&lt;Guest&gt;
+            </text>
+            <text x="5.5" y="113.5">
+                - location: Location
+            </text>
+            <text x="5.5" y="127.5">
+                - description: Description
+            </text>
+            <text x="5.5" y="141.5">
+                - calender: Calender
+            </text>
+            <text x="5.5" y="155.5">
+                - notifications: ArrayList&lt;Notification&gt;
+            </text>
+        </g>
+        <path d="M 0 164 L 410 164" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="rgb(0, 0, 0)" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-173-402-102-0)" font-size="12px">
+            <text x="5.5" y="185.5">
+                + setTitle(String): void
+            </text>
+            <text x="5.5" y="199.5">
+                + setLocalDateTime(int  year, int month, int day, int hour, int minute): void)
+            </text>
+            <text x="5.5" y="213.5">
+                + save(): int
+            </text>
+        </g>
+    </g>
+</svg>
