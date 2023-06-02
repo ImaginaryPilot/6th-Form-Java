@@ -1,5 +1,6 @@
 package Practice.Q13;
 
+
 public class Arrival {
     private Flight myFlight;
     private String sta;  
@@ -9,7 +10,7 @@ public class Arrival {
     private String gate;
     private int delay;
     private boolean landed;  
-    public  Arrival(Flight myFlight, int sta) {  
+    public  Arrival(Flight myFlight, String sta) {  
         this.myFlight = myFlight; 
         this.sta = sta;
         this.runway = 0;
@@ -22,12 +23,8 @@ public class Arrival {
     }
     
     public String getETA() { 
-        int temp = 
-        String str = Integer.toString(temp);
-        return str;
-        // calculates the Estimated Time of Arrival (ETA) of the flight
-        // by adding the delay to the sta and returning the result as a 
-        // String ("hh:mm")  
+        // assume code is there
+        return "01:10"; // todo: obviously this is just an example
     }
     
     public int compareWith(String flightID) {  
