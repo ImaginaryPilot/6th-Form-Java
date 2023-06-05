@@ -11,9 +11,9 @@ public class Points {
     
     private String statusNextYear; // following year's status 
     
-    private Visits[] allVisits = new Visits[366]; //details of each visit during the year
+    private static Visits[] allVisits = new Visits[366]; //details of each visit during the year
     
-    int y; // number of visits this year
+    int y = 9; // number of visits this year
 
     // constructor for new member
     public Points(String id)  {    
@@ -40,10 +40,19 @@ public class Points {
     // Behaviour methods
     public boolean isGold() {
         boolean isGold = false;
-        if((this.totalPoints + this.bonusPoints) <= 50000){
-            statusNextYear = "Gold";
+        if(calculateTotalPoints(y, bonusPoints) >= 50000){
             return isGold = true;
         }
         return isGold;
+    }
+
+    public static int calculateTotalPoints(int days, int bonusPoints){
+        int totalCurrentYear = 0;
+        for(int i = 0; i < allVisits.length; i++){
+            if(allVisits[i] != null){
+                totalCurrentYear += allVisits[i].getDays() * 1000;
+            }
+        }
+        return totalCurrentYear;
     }
 }
