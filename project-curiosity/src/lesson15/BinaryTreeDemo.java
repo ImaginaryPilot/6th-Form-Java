@@ -14,6 +14,7 @@ public class BinaryTreeDemo {
         CSclassroom.getRight().getRight().getRight().setLeft(new BinaryTreeNode(false, "D"));
         CSclassroom.getRight().getRight().getRight().setRight(new BinaryTreeNode(false, "Dim"));
 
-        CSclassroom.Inorder();
+        StringBuffer result = CSclassroom.Inorder();
+        System.out.println(result);
     }
 }

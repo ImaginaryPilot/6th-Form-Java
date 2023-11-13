@@ -13,6 +13,9 @@ public class BinaryTreeNode {
 
     private BinaryTreeNode right;
     
+    // light ui dependecy
+    StringBuffer buffer = new StringBuffer();
+
     // Constructor
     public BinaryTreeNode(boolean isRoot, String key) {
         this.isRoot = isRoot;
@@ -53,16 +56,16 @@ public class BinaryTreeNode {
     }
 
     public void visit(){
-        System.out.println(key);
+        this.buffer.append(this.key);
         isVisted = true;
     }
 
     /**
      * Tree Node Traversals
      */
-    public void Inorder()
+    public StringBuffer Inorder()
     {
-        if(this.isVisted == true) return;
+        if(this.isVisted == true) return buffer;
 
         /* Recur on the left as much as you can */
         if (this.left != null) {
@@ -76,10 +79,12 @@ public class BinaryTreeNode {
         if (this.right != null) {
             this.right.Inorder();
         }
+
+        return buffer;
     }
 
-    public void postOrder() {
-        if(this.isVisted == true) return;
+    public StringBuffer postOrder() {
+        if(this.isVisted == true) return buffer;
 
         if (this.left != null) {
             this.left.postOrder();
@@ -92,10 +97,12 @@ public class BinaryTreeNode {
 
         // call visit
         visit();
+
+        return buffer;
     }
 
-    // TODO: preOrder
-    public void preOrder() {
+    // preOrder
+    public StringBuffer preOrder() {
         if(!isVisted == true){
             // call visit
             visit();
@@ -110,5 +117,6 @@ public class BinaryTreeNode {
         if (this.right != null) {
             this.right.preOrder();
         }
+        return buffer;
     }
 }
