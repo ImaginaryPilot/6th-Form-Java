@@ -1,31 +1,35 @@
 package lesson13.mcdexample;
 
-public class Sandwich extends FoodItem{
+public class Sandwich extends FoodItem {
 
-    private static final double premium = 7.25;
-    private static final double standard = 6.25;
+    // Data (Attributes) --------------------------------
+    private static final double PREMIUM_PRICE = 7.25;
+    private static final double STANDARD_PRICE = 6.25;
+
     private final String NO_TOMATOES = "NT";
-
+    
     String[] grillOrder = new String[3];
 
     boolean isPremium;
 
-    public Sandwich(String code, boolean isLimitedEdition) {
-        super(code, standard);
+    // Constructor
+    public Sandwich(String code, boolean isPremium) {
+        super(code, STANDARD_PRICE);
 
         if(isPremium) {
-            super.setPrice(premium);
-        }
+            super.setPrice(PREMIUM_PRICE);
+        }  
     }
 
-
-    public void printKitchenOrder(){
+    // Behaviour (Methods) ------------------------------
+    public void printKitchenOrder() {
         String order = this.code + ": ";
-        
-        for (int i = 0; i < grillOrder.length; i++){
-            if(grillOrder[i] == null) return;
-
-            order += grillOrder[i] + ", ";
+        for (int i = 0; i < grillOrder.length; i++) {
+            if(grillOrder[i] == null) {
+                return;
+            } else {
+                order = order + grillOrder[i] + " ";
+            }
         }
     }
 }
