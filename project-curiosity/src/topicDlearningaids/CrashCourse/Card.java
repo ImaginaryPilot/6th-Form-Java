@@ -30,4 +30,26 @@ public class Card {
     public double TopUp(double addAmount) {
         return this.balance += addAmount;
     }
+
+    public double useCard(double amount) {
+        return this.balance -= amount;
+    }
+
+    public double premiumTopUp(double addAmount) {
+        /*
+         * 6. local variables
+         * A variable strictly tied to a particular scope is localised. 
+         * The variable is only usable to its own and children scopes. An example is newAmount.
+         */ 
+        double newAmount = 0;
+
+        if(addAmount >= 10) {
+            newAmount = addAmount + (addAmount * 0.1);
+        }
+        else {
+            newAmount = addAmount;
+        }
+
+        return this.balance += newAmount;
+    }
 }
