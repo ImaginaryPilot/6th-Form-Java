@@ -18,8 +18,9 @@ public class Card {
     // state
 
     // 2. An identifier is a unique label/name given to a particular object. 
-    double balance = 0;
-    int id;
+    private double balance = 0;
+    private int id;
+    private Passenger passenger;
 
     // behaviour
     /*
@@ -27,6 +28,22 @@ public class Card {
      * A parameter is unique variable specific to the method. 
      * Used to accept input elements to alter the state of the object.
     */
+
+    // constructor
+    public Card(Passenger passenger){
+        this.passenger = passenger;
+    }
+
+    // accessors
+    public double getBalance(){
+        return this.balance;
+    }
+
+    public Passenger getPassenger(){
+        return this.passenger;
+    }
+
+    // mutators
     public double TopUp(double addAmount) {
         return this.balance += addAmount;
     }
