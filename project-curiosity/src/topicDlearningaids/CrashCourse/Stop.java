@@ -1,6 +1,18 @@
 package topicDlearningaids.CrashCourse;
 
 public class Stop {
-    private String stopName;
-    private String stopNumber;
+    private int stopNumber;
+    private static double fair = 0.5;
+
+    public Stop(int stopNumber){
+        this.stopNumber = stopNumber;
+    }
+    
+    public int getStopNumber(){
+        return this.stopNumber;
+    }
+
+    public static double getFair() {
+        return Stop.fair;
+    }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Route {
 
-    public static ArrayList<Stop> allStops = new ArrayList<Stop>();
+    public ArrayList<Stop> allStops = new ArrayList<Stop>();
 
     private String routeNumber;
     private String routeName;
@@ -18,4 +18,7 @@ public class Route {
         allStops.add(index, stop);
     }
 
+    public void printStops(){
+        System.out.println(allStops);
+    }
 }

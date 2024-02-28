@@ -1,5 +1,8 @@
 package topicDlearningaids.CrashCourse;
 
+import helpers.ArrayHelper;
+import helpers.Keyboard;
+
 public class TransportCardFactory {
     public static void main(String[] args){
         Stop stop;
@@ -8,14 +11,24 @@ public class TransportCardFactory {
         Card myCard = new Card(john);
         Route route = new Route("randomRoute", "1");
 
-        for(int i = 0; i < 5; i++){
-            route.allStops.addStop(i, stop);
+        for(int i = 0; i < 15; i++){
+            stop = new Stop(i);
+            route.addStop(i, stop);
         }
 
         myCard.premiumTopUp(20);
-        myCard.useCard(2.5);
-        System.out.println(myCard.getPassenger().getName());
+        System.out.println("Your current balance: " + myCard.getBalance());
 
+        System.out.println("How many stops will you go through?");
+        int userChoice = Keyboard.readInt();
+        double amount = userChoice * Stop.getFair();
 
+        if(amount > myCard.getBalance() || amount < 0){
+            System.out.println("invalid");
+        } else {
+            System.out.println("accepted");
+            myCard.useCard(amount);
+            System.out.println("Your new balance: " + myCard.getBalance());
+        }
     }
 }
