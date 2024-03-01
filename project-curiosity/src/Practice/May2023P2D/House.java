@@ -14,4 +14,10 @@ public class House {
     public House(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        String temp = "" + this.price;
+        return temp;
+    }
 }

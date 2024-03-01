@@ -8,9 +8,8 @@ public class Learning {
         for (int i = 0; i < allHouses.length; i++) {
             House house = new House(i);
             allHouses[i] = house;
+            System.out.println(house);
         }
-
-        System.out.println(houseSort(allHouses));
 
     }
 
