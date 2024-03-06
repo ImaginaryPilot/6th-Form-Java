@@ -1,4 +1,4 @@
-package topicDlearningaids.CrashCourse;
+package topicDlearningaids.TransportCard;
 
 public class Passenger {
     private String name = "";

@@ -1,17 +1,17 @@
-package topicDlearningaids.CrashCourse;
+package topicDlearningaids.TransportCard;
 
 import helpers.ArrayHelper;
 import helpers.Keyboard;
 
 public class TransportCardFactory {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Stop stop;
-        
+
         Passenger john = new Passenger("john", 25, "283742A");
         Card myCard = new Card(john);
         Route route = new Route("randomRoute", "1");
 
-        for(int i = 0; i < 15; i++){
+        for (int i = 0; i < 15; i++) {
             stop = new Stop(i);
             route.addStop(i, stop);
         }
@@ -23,7 +23,7 @@ public class TransportCardFactory {
         int userChoice = Keyboard.readInt();
         double amount = userChoice * Stop.getFair();
 
-        if(amount > myCard.getBalance() || amount < 0){
+        if (amount > myCard.getBalance() || amount < 0) {
             System.out.println("invalid");
         } else {
             System.out.println("accepted");

@@ -1,4 +1,4 @@
-package topicDlearningaids.CrashCourse;
+package topicDlearningaids.TransportCard;
 
 import java.util.ArrayList;
 
@@ -14,11 +14,11 @@ public class Route {
         this.routeName = name;
     }
 
-    public void addStop(int index, Stop stop){
+    public void addStop(int index, Stop stop) {
         allStops.add(index, stop);
     }
 
-    public void printStops(){
+    public void printStops() {
         System.out.println(allStops);
     }
 }

@@ -1,4 +1,4 @@
-package topicDlearningaids.CrashCourse;
+package topicDlearningaids.TransportCard;
 
 /* 1.
  * Class is defined as the bludeprint of an abstract entity. 
@@ -17,29 +17,29 @@ package topicDlearningaids.CrashCourse;
 public class Card {
     // state
 
-    // 2. An identifier is a unique label/name given to a particular object. 
+    // 2. An identifier is a unique label/name given to a particular object.
     private double balance = 0;
     private int id;
     private Passenger passenger;
 
     // behaviour
     /*
-     * 5. 
-     * A parameter is unique variable specific to the method. 
+     * 5.
+     * A parameter is unique variable specific to the method.
      * Used to accept input elements to alter the state of the object.
-    */
+     */
 
     // constructor
-    public Card(Passenger passenger){
+    public Card(Passenger passenger) {
         this.passenger = passenger;
     }
 
     // accessors
-    public double getBalance(){
+    public double getBalance() {
         return this.balance;
     }
 
-    public Passenger getPassenger(){
+    public Passenger getPassenger() {
         return this.passenger;
     }
 
@@ -55,15 +55,15 @@ public class Card {
     public double premiumTopUp(double addAmount) {
         /*
          * 6. local variables
-         * A variable strictly tied to a particular scope is localised. 
-         * The variable is only usable to its own and children scopes. An example is newAmount.
-         */ 
+         * A variable strictly tied to a particular scope is localised.
+         * The variable is only usable to its own and children scopes. An example is
+         * newAmount.
+         */
         double newAmount = 0;
 
-        if(addAmount >= 10) {
+        if (addAmount >= 10) {
             newAmount = addAmount + (addAmount * 0.1);
-        }
-        else {
+        } else {
             newAmount = addAmount;
         }
 

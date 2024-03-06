@@ -1,14 +1,14 @@
-package topicDlearningaids.CrashCourse;
+package topicDlearningaids.TransportCard;
 
 public class Stop {
     private int stopNumber;
     private static double fair = 0.5;
 
-    public Stop(int stopNumber){
+    public Stop(int stopNumber) {
         this.stopNumber = stopNumber;
     }
-    
-    public int getStopNumber(){
+
+    public int getStopNumber() {
         return this.stopNumber;
     }
 
